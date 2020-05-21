@@ -1,0 +1,42 @@
+<!--
+============================================
+; Title:  Exercise-4.2.html
+; Author: Professor Krasso
+; Date:   20 MAY 2020
+; Modified by: Jason Cords
+; Description: Using GET operations.
+=============================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Exercise 4.2</title>
+
+    <!-- jQuery reference -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<button id="get">Press ME..>></button>
+
+<script>
+
+  $(function() {
+/* 
+Onclick ajax function to GET data and status from url
+once data is retrieved, log it to console
+*/
+    $("#get").click(function () { 
+      $.get("https://dog.ceo/api/breeds/image/random", function (data, status) {
+      console.log("Data: " + JSON.stringify(data) + "\nStatus: " + status);
+      })
+    });
+
+  });
+</script>
+
+</body>
+</html>

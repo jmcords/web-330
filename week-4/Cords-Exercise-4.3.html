@@ -1,0 +1,49 @@
+<!--
+============================================
+; Title:  Exercise-4.3.html
+; Author: Professor Krasso
+; Date:   20 MAY 2020
+; Modified by: Jason Cords
+; Description: Using DELETE operations.
+=============================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 4.3</title>
+
+  <!-- jQuery reference -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <button id="del">Press ME..>></button>
+
+  <script>
+
+    $(function() {
+      /*
+      onclick function to navigate to url and get delete function
+      values will be returned with status.
+      */
+      $("del").click(function () {
+        $.ajax({
+          url: "http://httpbin.org/delete",
+          dataType:"json",
+          type: "DELETE",
+          data: {name: "user", password: "password", occupation: "lead developer"},
+          success: function (data, status) {
+            console.log("Username: " + data.form.name + "\nPassword: " +
+             data.form.password + "\nOccupation: " + data.form.occupation + "\nStatus: " + status);
+          }
+        })
+      });
+    });
+
+  </script>
+
+</body>
+</html>
