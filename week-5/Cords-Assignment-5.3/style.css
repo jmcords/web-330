@@ -1,0 +1,10 @@
+h1, h4{
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /*creates black outline around text for readability*/
+}
+hr{
+  height:10px;
+  border-width:0;
+  color:gray;
+  background-color:gray
+}
